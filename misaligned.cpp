@@ -4,6 +4,11 @@
 const char *majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
 const char *minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
 
+bool testAlignment(int icheck, int jcheck, const char *minCol, const char *majCol )
+{
+    
+}
+
 int printColorMap()
 {
     int i = 0, j = 0;
@@ -12,6 +17,7 @@ int printColorMap()
         for (j = 0; j < 5; j++)
         {
             std::cout << i * 5 + j << " | " << majorColor[i] << " | " << minorColor[i] << "\n";
+            assert(testAlignment(i, j, majorColor[i], majorColor[j]));// test function 
         }
     }
     return i * j;
