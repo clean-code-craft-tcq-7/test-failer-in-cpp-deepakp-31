@@ -17,9 +17,7 @@ int printColorMap()
     return i * j;
 }
 
-void testNumberToPair(int pairNumber,
-                      MajorColor expectedMajor,
-                      MinorColor expectedMinor)
+void testNumberToPair(int pairNumber, MajorColor expectedMajor, MinorColor expectedMinor)
 {
     ColorPair colorPair = GetColorFromPairNumber(pairNumber);
     std::cout << "Got pair " << colorPair.ToString() << std::endl;
@@ -45,12 +43,20 @@ bool  assertionTest()
     
 }
 
+void checking(int major, int minor)
+{
+    const char* check[] = majorColor[major] + minorColor[minor];
+}
+
 int main()
 {
     int result = printColorMap();
     assert(result == 25);
     assert(testPairToNumber("Red","Green", 8));
-    assert(testPairToNumber("Yellow","Brown", 19);)
+    assert(testPairToNumber("Yellow","Brown", 19));
+
+    assert(check,)
+
 
     std::cout << "All is well (maybe!)\n";
     return 0;
