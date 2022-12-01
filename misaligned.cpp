@@ -1,5 +1,6 @@
 #include <iostream>
 #include <assert.h>
+#include <string.h>
 
 const char *majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
 const char *minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
@@ -45,7 +46,8 @@ bool  assertionTest()
 
 void checking(int major, int minor)
 {
-    const char* check[] = majorColor[major] + minorColor[minor];
+    std::string checkString = ((i*5) + j) +" | " + majorColor[major] + " | " + minorColor[minor];
+//     char* check[] = {majorColor[major] + minorColor[minor]};
 }
 
 int main()
@@ -55,6 +57,9 @@ int main()
     assert(testPairToNumber("Red","Green", 8));
     assert(testPairToNumber("Yellow","Brown", 19));
 
+    std::string checkString = i*5+j+ " | "+ majorColor[i] + " | " + minorColor[j];
+
+    checkString.compare("25 | Violet | Slate");
     assert(check,)
 
 
