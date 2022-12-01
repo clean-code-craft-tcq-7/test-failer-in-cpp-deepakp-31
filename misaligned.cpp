@@ -26,7 +26,7 @@ void testNumberToPair(int pairNumber, MajorColor expectedMajor, MinorColor expec
     assert(colorPair.getMinor() == expectedMinor);
 }
 
-bool testPairToNumber(char *major,char * minor, int expectedPairNumber)
+bool testPairToNumber(char *major, char *minor, int expectedPairNumber)
 {
     int pairNumber = GetPairNumberFromColor(major, minor);
     std::cout << "Got pair number " << pairNumber << std::endl;
@@ -34,33 +34,35 @@ bool testPairToNumber(char *major,char * minor, int expectedPairNumber)
 
     return true;
 
-    else
-        return false;
+    else return false;
 }
 
-bool  assertionTest()
+bool assertionTest()
 {
-    for (int )
-    
+    for (int)
 }
 
-void checking(int major, int minor)
+bool checking(int major, int minor, std::string strToCompare)
 {
-    std::string checkString = ((i*5) + j) +" | " + majorColor[major] + " | " + minorColor[minor];
-//     char* check[] = {majorColor[major] + minorColor[minor]};
+    std::string checkString = std::to_string((((major-1) * 5) + minor)) + " | " + majorColor[major-1] + " | " + minorColor[minor-1];
+    // char* check[] = {majorColor[major] + minorColor[minor]};
+
+    // Compare string
+    return checkString.compare(strToCompare);
 }
 
 int main()
 {
     int result = printColorMap();
     assert(result == 25);
-    assert(testPairToNumber("Red","Green", 8));
-    assert(testPairToNumber("Yellow","Brown", 19));
+    assert(testPairToNumber("Red", "Green", 8));
+    assert(testPairToNumber("Yellow", "Brown", 19));
 
-    std::string checkString = i*5+j+ " | "+ majorColor[i] + " | " + minorColor[j];
+    // std::string checkString = std::to_string(*5+j+ " | "+ majorColor[i] + " | " + minorColor[j];
 
-    checkString.compare("25 | Violet | Slate");
-    assert(check,)
+    // checkString.compare("25 | Violet | Slate");
+    assert(checking(5, 5, "25 | Violet | Slate"));
+    assert(checking(2, 4, "9 | Red | Brown"));
 
 
     std::cout << "All is well (maybe!)\n";
