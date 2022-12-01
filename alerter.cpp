@@ -10,7 +10,7 @@ int networkAlertStub(float celcius)
     // Return 500 for not-ok
     // stub always succeeds and returns 200
     int thresholdTemperature = 200;
-    if (celcius < thresholdTemperature)
+    if (celcius <= thresholdTemperature)
     {
         std::cout << "Temperature is " << celcius << " celcius is safe and below threshold Temperatur.\n";
         return 200;
