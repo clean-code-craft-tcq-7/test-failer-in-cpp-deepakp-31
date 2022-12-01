@@ -3,12 +3,23 @@
 
 int alertFailureCount = 0;
 
-int networkAlertStub(float celcius) {
-    std::cout << "ALERT: Temperature is " << celcius << " celcius.\n";
+int networkAlertStub(float celcius)
+{
+    // std::cout << "ALERT: Temperature is " << celcius << " celcius.\n";
     // Return 200 for ok
     // Return 500 for not-ok
     // stub always succeeds and returns 200
-    return 200;
+    int thresholdTemperature = 200;
+    if (celcius < thresholdTemperature)
+    {
+        std::cout << "Temperature is " << celcius << " celcius is safe and below threshold Temperatur.\n";
+        return 200;
+    }
+    else
+    {
+        std::cout << "ALERT: Temperature is " << celcius << " celcius.\n";
+        return 500;
+    }
 }
 
 void alertInCelcius(float farenheit) {
