@@ -12,7 +12,17 @@ int printColorMap()
     {
         for (j = 0; j < 5; j++)
         {
-            std::cout << ((i * 5) + j + 1) << " | " << majorColor[i] << " | " << minorColor[j] << "\n";
+            std::cout << ((i * 5) + j + 1) << "\t| ";
+            std::string strMajcol = majorColor[i];
+            if (strMajcol.length() > 5)
+                std::cout<< majorColor[i] ;
+            else
+            {    
+                std::cout<<majorColor[i] ;
+                for (int i =1; i <= (6 - strMajcol.length()); i ++)  std::cout<<" ";
+            }
+            
+            std::cout<< "\t| " << minorColor[j] << "\n";
         }
     }
     return i * j;
@@ -21,7 +31,6 @@ int printColorMap()
 bool checkString(int major, int minor, std::string strToCompare)
 {
     std::string checkString = std::to_string((((major - 1) * 5) + minor)) + " | " + majorColor[major - 1] + " | " + minorColor[minor - 1];
-    // char* check[] = {majorColor[major] + minorColor[minor]};
 
     // Compare string
     return checkString.compare(strToCompare);
@@ -33,8 +42,8 @@ int main()
     assert(result == 25);
 
     // Random Test
-    assert(checkString(5, 5, "25 | Violet | Slate"));
-    assert(checkString(2, 4, "9 | Red | Brown"));
+    assert(checkString(5, 5, "25\t| Violet\t| Slate"));
+    assert(checkString(2, 4, "9\t| Red   \t| Brown"));
 
     std::cout << "All is well (maybe!)\n";
     return 0;
