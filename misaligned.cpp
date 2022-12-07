@@ -19,7 +19,7 @@ int printColorMap()
             else
             {    
                 std::cout<<majorColor[i] ;
-                for (int i =1; i <= (6 - strMajcol.length()); i ++)  std::cout<<" ";
+                for (long unsigned int k =1; k <= (6 - strMajcol.length()); k ++)  std::cout<<" ";
             }
             
             std::cout<< "\t| " << minorColor[j] << "\n";
